@@ -47,6 +47,7 @@ public class StoryRunner {
 		dc.setCapability("browserstack.debug", "true");
 		dc.setCapability("build", "jbehave_tests_lan_com");
 		try {
+			System.out.println("Creating driver using key: "+BS_AUTH_KEY);
 			driver = new RemoteWebDriver(new URL(url), dc);
 		} catch (MalformedURLException e) {
 			System.err.println("Exception in url: " + e.getMessage());
