@@ -21,9 +21,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class StoryRunner {
 
 	public WebDriver driver;
-        private String BS_USER = System.getenv("BS_USER");
-        private String BS_AUTH_KEY = System.getenv("BS_AUTH_KEY");
-        public final String url = "http://"+BS_USER+":"+BS_AUTH_KEY+"@hub.browserstack.com/wd/hub/";
 	public String os;
 	public String osVersion;
 	public String browser;
@@ -39,6 +36,9 @@ public class StoryRunner {
 
 	@Before
 	public void setUp() {
+	        String BS_USER = System.getenv("BS_USER");
+	        String BS_AUTH_KEY = System.getenv("BS_AUTH_KEY");
+	        String url = "http://"+BS_USER+":"+BS_AUTH_KEY+"@hub.browserstack.com/wd/hub/";
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability("os", os);
 		dc.setCapability("os_version", osVersion);
