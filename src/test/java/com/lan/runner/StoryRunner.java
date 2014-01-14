@@ -36,8 +36,8 @@ public class StoryRunner {
 
 	@Before
 	public void setUp() {
-	        String BS_USER = System.getenv("BS_USER");
-	        String BS_AUTH_KEY = System.getenv("BS_AUTH_KEY");
+	        String BS_USER = System.getenv("bamboo_BS_USER");
+	        String BS_AUTH_KEY = System.getenv("bamboo_BS_AUTH_KEY");
 	        String url = "http://"+BS_USER+":"+BS_AUTH_KEY+"@hub.browserstack.com/wd/hub/";
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability("os", os);
